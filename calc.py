@@ -16,13 +16,13 @@ def pexp(xs,ys,p):
 	#piece used for determining which part of the piecewise 
 	#exponential function is relevant.
 	piece = 0
-	for k in range(0,len(xs)-1):
+	for k in range(0,len(xs)):
 		if p > xs[k]:
 			piece += 1
 	if piece == 0:
 		output = ys[piece]
-	elif piece == len(xs) -1:
-		output = ys[piece]
+	elif piece == len(xs):
+		output = ys[piece-1]
 	else:
 		r = (math.log(ys[piece-1])-math.log(ys[piece]))/(xs[piece-1]-xs[piece])
 		print("r=",r)
@@ -34,6 +34,7 @@ def pexp(xs,ys,p):
 print(pexp(prices,prop,70))
 
 print("at 95",pexp(prices,prop,95))
+print("at 100",pexp(prices,prop,100))
 print("at 102",pexp(prices,prop,102))
 
 
