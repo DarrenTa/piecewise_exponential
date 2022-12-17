@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import math
+import sys
 
 prices = [85,100,105]
 
@@ -12,7 +13,7 @@ def pexp(xs,ys,p):
 #p is the value that you want to evaluate your function at
 	#Break if arreys aren't the same length
 	if len(xs) != len(ys):
-		sys.exit("Arrays not same length")
+		sys.exit("ERROR! HALT: Arrays not same length")
 	#piece used for determining which part of the piecewise 
 	#exponential function is relevant.
 	piece = 0
